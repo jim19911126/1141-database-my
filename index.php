@@ -16,15 +16,34 @@
 
     $pdo = new PDO($dsn, 'root', '');
 
-    $items= $pdo->query("SELECT `name`,`price` FROM items")->fetchAll(PDO::FETCH_ASSOC);
+    $items= $pdo->query("SELECT `id`,`name`,`price` FROM items")->fetchAll(PDO::FETCH_ASSOC);
     ?>
-
+    <div>
+    <button><a href='add_item.php'>+</a></button>
+    <button><a href='sales_report.php'>銷售報表</a></button>
+    </div>
     <table>
         <tr>
-            <td></td>
-            <td></td>
+            <td>品項</td>
+            <td>價格</td>
+            <td>操作</td>
         </tr>
-    </table>
+
+        <?php
+        foreach ($items as $item):
+            ?>
+            <tr>
+                <td><?=$item['name'];?></td>
+                <td><?=$item['price'];?></td>
+                <td>
+                    <a href='update_item.php?id=<?=$item['id'];?>'>編輯</a>
+                    <a href='./api/delete_item.php?id=<?=$item['id'];?>'>刪除</a>
+            </td>
+            </tr>
+            <?php
+            endforeach;
+            ?>
+                </table>
 </body>
 
 </html>

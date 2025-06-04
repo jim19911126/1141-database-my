@@ -1,0 +1,67 @@
+/* 全域設定 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 標頭改為蒂芬妮綠背景，文字維持白色 */
+#header {
+    background: #0ABAB5; /* Tiffany 綠 */
+    color: #ffffff;
+    padding: 32px;
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 內文區背景調整為淡蒂芬妮綠（30% 不透明度） */
+main {
+    flex: 1;
+    padding: 40px 20px;
+    background: rgba(10, 186, 181, 0.15); /* 淡化蒂芬妮綠 */
+    min-height: 300px;
+}
+
+/* 頁尾改為深版蒂芬妮綠，文字白色 */
+footer {
+    background: #086B68; /* 稍深一點的蒂芬妮綠 */
+    color: #ffffff;
+    text-align: center;
+    padding: 18px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Logo 容器 */
+/* 內部直接放置一個 SVG 作為柯基圖案 */
+.logo {
+    width: 30px;
+    height: 30px;
+    background: #fff3cd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo svg {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+/* 導航連結顏色也改為深蒂芬妮綠 */
+.nav a {
+    text-decoration: none;
+    color: #086B68;
+}
+.nav a:hover {
+    color: #02312F;       /* 更深的綠色作為懸停顏色 */
+    text-decoration: underline;
+}
